@@ -37,6 +37,9 @@ http://wiki.ubuntu.org.cn/index.php?title=C_Cpp_IDE&variant=zh-tw
 http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html#linux-installation
 https://www.youtube.com/watch?v=Cci256oj8dg
 
+因為安裝版本問題，參考文獻說明，安裝OpenCV需注意不同作業系統下可運用的版本是有其限制。
+目前以Ubuntu 14.04 + OpenCV 2.4.11。
+
 1. 必要安裝，透過apt-get
 
 [compiler] 
@@ -55,6 +58,8 @@ https://www.youtube.com/watch?v=Cci256oj8dg
 
 >> wget -O [download file name] [download URL]
 ※ https://github.com/Itseez/opencv/archive/2.4.13.zip
+※ https://github.com/Itseez/opencv/archive/2.4.11.zip
+※ http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.9/opencv-2.4.9.zip
 
 4. 解壓縮OpenCV
 
@@ -70,9 +75,12 @@ https://www.youtube.com/watch?v=Cci256oj8dg
 
 A. 表準句型 
 >> cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+>> cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..
 
 B. 包括C語言範例
 >> cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_OPENGL=ON -D INSTALL_C_EXAMPLES=ON -D BUILE_EXAMPLES=ON ..
+
+
 
 ※ 參數 -D WITH_QT 需有QT版本，此部分有待確認使用狀態
 ※ TBB, Threading Building Blocks
@@ -97,6 +105,15 @@ https://www.threadingbuildingblocks.org/
 ---------------------------
 Installing OpenCV 2.2 in Ubuntu 11.04
 http://www.samontab.com/web/2011/06/installing-opencv-2-2-in-ubuntu-11-04/
+
+Installing OpenCV 2.4.9 in Ubuntu 14.04 LTS
+http://www.samontab.com/web/2014/06/installing-opencv-2-4-9-in-ubuntu-14-04-lts/
+
+Installing OpenCV-2.4.11 on ubuntu 14.04
+http://computervisionwithvaibhav.blogspot.tw/2015/07/installing-opencv-300-on-ubuntu-1404_24.html
+
+install-opencv-2.4.11-in-ubuntu.sh
+https://gist.github.com/dynamicguy/3d1fce8dae65e765f7c4
 ---------------------------
 
 9 執行範例程式
@@ -107,7 +124,6 @@ http://www.samontab.com/web/2011/06/installing-opencv-2-2-in-ubuntu-11-04/
 10. 編譯範例程式 (僅供參考)
 
 >> g++ houghlines.cpp -o application 'pkg-config --cflags --libs opencv'
->> g++ 'pkg-config --cflags opencv' houghlines.cpp 'pkg-config --libs opencv' -o application 
 
 ※ 相關文章參考：
 ---------------------------
@@ -116,6 +132,9 @@ http://www.learnopencv.com/how-to-compile-opencv-sample-code/
 
 pkg-config --cflags opencv: No such file or directory
 http://stackoverflow.com/questions/20625096/
+
+Using OpenCV with Eclipse (plugin CDT)
+http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_eclipse/linux_eclipse.html
 ---------------------------
 
 
