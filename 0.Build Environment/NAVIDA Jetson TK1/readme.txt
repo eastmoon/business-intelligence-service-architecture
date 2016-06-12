@@ -75,6 +75,9 @@ https://www.youtube.com/watch?v=TB-bIayjBbc
 
 Jetpack 2.0 Install on NVIDIA Jetson TK1
 https://www.youtube.com/watch?v=J-ma4aZyqfY
+
+Jetson focused Linux tips and tricks
+https://devtalk.nvidia.com/default/topic/785551/embedded-systems/my-jetson-focused-linux-tips-and-tricks/
 ---------------------------
 
 ◎ Jetson TK1 IDE
