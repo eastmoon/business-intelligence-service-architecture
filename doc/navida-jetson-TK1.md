@@ -13,7 +13,7 @@
 本段內容是與有實務經驗網友討論之成果。
 TK1的啟動運作如下：
 0. 依據啟動用的按鈕決定使用的Booting模式
-1. Normal 模式：
+1. Normal 模式
 + 若系統尚未安裝，自Flash rom中取得系統，將系統安裝置Ram的作業系統區域。
 + 若喜統已安裝，自作業系統區域啟動系統。
 2. Recovry 模式
@@ -41,7 +41,7 @@ Jetpack will using internet to install CUDA and OpenCV library.
 原則上，安裝Jetpack的過程，便會在Ubuntu內安裝好Nsight Eclipse。
 如果沒有，則安裝CUDA即會安裝Nsight Eclipse。
 
-※ 但要注意，Jetpack安裝過程並不包含提供OpenCV等函數庫，因此若要編譯此類軟體，需另外安裝。
+**但要注意，Jetpack安裝過程並不包含提供OpenCV等函數庫，因此若要編譯此類軟體，需另外安裝。**
 
 ## 文獻
 
