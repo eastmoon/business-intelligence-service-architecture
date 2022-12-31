@@ -46,15 +46,15 @@ Jetpack will using internet to install CUDA and OpenCV library.
 ## 文獻
 
 + Reference
- 		- [【開箱文】NVIDIA Jetson TK1](http://www.coolpc.com.tw/phpBB2/viewtopic.php?f=70&t=147025)
- 		- [Jetson TK1](http://elinux.org/Jetson_TK1)
- 		- [Embedded Download Center](https://developer.nvidia.com/embedded/downloads#?tx=$product,jetson_tk1)
- 		- [Jetson/Installing OpenCV](http://elinux.org/Jetson/Installing_OpenCV)
- 		- [Jetson TK1 Development Kit User Guide](http://developer.download.nvidia.com/embedded/jetson/TK1/docs/2_GetStart/Jeston_TK1_User_Guide.pdf)
-		- Getting Started with Jetson TK1 and the ZED](https://www.stereolabs.com/blog/index.php/2015/09/24/getting-started-with-jetson-tk1-and-zed/)
+	- [【開箱文】NVIDIA Jetson TK1](http://www.coolpc.com.tw/phpBB2/viewtopic.php?f=70&t=147025)
+ 	- [Jetson TK1](http://elinux.org/Jetson_TK1)
+ 	- [Embedded Download Center](https://developer.nvidia.com/embedded/downloads#?tx=$product,jetson_tk1)
+ 	- [Jetson/Installing OpenCV](http://elinux.org/Jetson/Installing_OpenCV)
+ 	- [Jetson TK1 Development Kit User Guide](http://developer.download.nvidia.com/embedded/jetson/TK1/docs/2_GetStart/Jeston_TK1_User_Guide.pdf)
+	- [Getting Started with Jetson TK1 and the ZED](https://www.stereolabs.com/blog/index.php/2015/09/24/getting-started-with-jetson-tk1-and-zed/)
 + Video
- 		- [NVidia Jetson TK1 Unboxing and booting](https://www.youtube.com/watch?v=8iJ-h96syKE)
- 		- [NVIDIA Jetson TK1 Samsung SSD Unboxing and Install](https://www.youtube.com/watch?v=poCV36nbAZM)
-		- JetPack TK1 1.1 Install and Flash on NVIDIA Jetson TK1](https://www.youtube.com/watch?v=TB-bIayjBbc)
-		- Jetpack 2.0 Install on NVIDIA Jetson TK1](https://www.youtube.com/watch?v=J-ma4aZyqfY)
-		- Jetson focused Linux tips and tricks](https://devtalk.nvidia.com/default/topic/785551/embedded-systems/my-jetson-focused-linux-tips-and-tricks/)
+ 	- [NVidia Jetson TK1 Unboxing and booting](https://www.youtube.com/watch?v=8iJ-h96syKE)
+ 	- [NVIDIA Jetson TK1 Samsung SSD Unboxing and Install](https://www.youtube.com/watch?v=poCV36nbAZM)
+	- [JetPack TK1 1.1 Install and Flash on NVIDIA Jetson TK1](https://www.youtube.com/watch?v=TB-bIayjBbc)
+	- [Jetpack 2.0 Install on NVIDIA Jetson TK1](https://www.youtube.com/watch?v=J-ma4aZyqfY)
+	- [Jetson focused Linux tips and tricks](https://devtalk.nvidia.com/default/topic/785551/embedded-systems/my-jetson-focused-linux-tips-and-tricks/)
