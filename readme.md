@@ -8,8 +8,13 @@
 + 設計單元應包括
     - 主要語言，C/C++、Python
     - 服務單元，資料解析、演算法、資料彙整、報表產生
-    - 演算框架，OpenCV、Scikit-Learn、Tensorflow
+    - 演算框架，OpenCV、OpenVINO、Scikit-Learn、Tensorflow
     - 系統單元，Console pipeline executor、Jenkins、Elasticsearch-Logstash-Kibana
+
+原始專案的設計目的，則回歸到[資料流架構](https://github.com/eastmoon/dataflow-architecture)設計，其運用的分野則需視對於演算法的計算量、效率而調整。
+
+## 介紹 ( Introduction )
+
 
 ## 文獻
 
@@ -22,7 +27,9 @@
     - [Image Processing online demo](http://felixniklas.com/imageprocessing/)
     - [Basic Image Processing Demos](http://robotics.eecs.berkeley.edu/~sastry/ee20/)
 
-+ Image analysis
-
 + Computer vision
     - [Machine learning coursera](https://www.youtube.com/watch?v=qeHZOdmJvFU&list=PLZ9qNFMHZ-A4rycgrgOYma6zxF4BZGGPW)
+    - [What is an Image Processing Framework for Machine Learning?](https://www.iguazio.com/glossary/image-processing-framework/)
+
++ Machine learning
+    - [Top 15 Machine Learning Frameworks for Machine Learning Experts](https://intellipaat.com/blog/machine-learning-frameworks/)
