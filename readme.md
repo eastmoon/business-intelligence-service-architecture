@@ -15,6 +15,7 @@
 
 ## 介紹 ( Introduction )
 
+![calculate-service-layer-architecture](doc/img/calculate-service-layer-architecture.png)
 
 ## 文獻
 
