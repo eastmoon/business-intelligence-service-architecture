@@ -1,8 +1,8 @@
-# 演算服務架構 ( Calculate Service Architecture )
+# 商業智慧服務架構 ( Business Intelligence Service Architecture )
 
 本專案原稱為 Computer vision play，原本設計之初是想整合常見的電腦視覺演算法，並基於 Pipe & Filter 架構的概念撰寫一個專用於 C/C++ 或 Python 的軟體架構，並運用於嵌入式系統中或邊緣運算設備；然而，考量近年的產業變化與演算軟體演進，重新自系統層面審視對於影像處理、樣式識別、電腦視覺等基礎知識，皆回歸於特徵工程、機械學習、人工智慧等新一代詞彙。
 
-對此，將專案重新定位為演算服務架構 ( Calculate Service Architecture )，並從系統運用層面規劃架構，考量其用途著眼於以下幾個要點：
+對此，將專案重新定位為商業智慧服務架構 ( Business Intelligence Service Architecture )，並從系統運用層面規劃架構，考量其用途著眼於以下幾個要點：
 
 + 演算法的容器化編譯、執行、封裝，讓演算法運用如 [SaaS](https://zh.wikipedia.org/zh-tw/%E8%BD%AF%E4%BB%B6%E5%8D%B3%E6%9C%8D%E5%8A%A1) 或 [FaaS](https://en.wikipedia.org/wiki/Function_as_a_service)
 + 設計單元應包括
@@ -35,7 +35,7 @@
 	<img src="doc/img/calculate-service-layer-architecture.png" alt="calculate-service-layer-architecture" />
 </center>
 
-在研讀與實務諸多資料科學的文獻，不難發現對於應對問題的 **『正確』**解答多半不存在，取而代之是會期望在諸多演算法中挑選最** 『適當』**的演算法，這就導致前述的數據處理方案，會因為多樣的來源有多樣的數據解析方案、也會因為挑選演算法需將相同解析交付多個演算法學習與驗證、並依據輸出需要彙整成報告或可執行的運用模型。
+在研讀與實務諸多資料科學的文獻，不難發現對於應對問題的 **正確』**解答多半不存在，取而代之是會期望在諸多演算法中挑選最** 『適當』**的演算法，這就導致前述的數據處理方案，會因為多樣的來源有多樣的數據解析方案、也會因為挑選演算法需將相同解析交付多個演算法學習與驗證、並依據輸出需要彙整成報告或可執行的運用模型。
 
 對此，將其系統架構規劃如上階層 ( Layer )
 
