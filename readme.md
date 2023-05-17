@@ -49,7 +49,7 @@
 ### 架構設計
 
 <center>
-	<img src="doc/img/bi-service-layer-architecture.png" alt="calculate-service-layer-architecture" />
+	<img src="doc/img/bi-service-layer-architecture.png" alt="bi-service-layer-architecture" />
 </center>
 
 在研讀與實務諸多資料科學的文獻，不難發現對於應對問題的**『正確』解答多半不存在，取而代之是會期望在諸多演算法中挑選最『適當』**的演算法，這就導致前述的數據處理方案，會因為多樣的來源有多樣的數據解析方案、也會因為挑選演算法需將相同解析交付多個演算法學習與驗證、並依據輸出需要彙整成報告或可執行的運用模型。
@@ -68,13 +68,13 @@
 若考量整合各運算階層，則可透過 DevOps 服務管理，並將各層所需的數據彙整至對應的資料庫，從而達到如下的系統架構
 
 <center>
-	<img src="doc/img/bi-service-devops-architecture.png" alt="calculate-service-jenkin-flow" />
+	<img src="doc/img/bi-service-devops-architecture.png" alt="bi-service-jenkin-flow" />
 </center>
 
 若以 Jenkins 為範例，則 DevOps 可設計如下流程。
 
 <center>
-	<img src="doc/img/bi-service-jenkin-flow.png" alt="calculate-service-jenkin-flow" />
+	<img src="doc/img/bi-service-jenkin-flow.png" alt="bi-service-jenkin-flow" />
 </center>
 
 在這流程中，其運作步驟如下：
@@ -86,6 +86,61 @@
 + Jenkins 收集專案數據並壓縮後儲存至 Storage
 + Jenkins 腳本會依據層級作為階段運作流程
 + Jenkins 腳本至少會處理一個層級的工作，至多所有層級皆處理
+
+### 開源軟體
+
+#### Source Layer
+
++ [Kettle](https://github.com/pentaho/pentaho-kettle)
++ [Kafka](https://zh.wikipedia.org/zh-tw/Kafka)
+    - [Nifi](https://nifi.apache.org/)
+    - [StreamSet](https://docs.streamsets.com/portal/platform-transformer/latest/transformer/GettingStarted/GettingStarted-Title.html#concept_a1b_zf4_pgb)
+        + [Announcing StreamSets Data Collector 3.11.0 and StreamSets Data Collector Edge 3.11.0](https://streamsets.com/blog/announcing-streamsets-data-collector-3-11-0-and-streamsets-data-collector-edge-3-11-0/)
++ [HOP](https://hop.apache.org/)
++ [MinIO](https://min.io/)
+    - [Apache Ozone](https://ozone.apache.org/)
+        + [Breaking the HDFS Speed Barrier - a First for Object Storage](https://blog.min.io/hdfsbenchmark/)
+        + [How is Apache Minio different than Apache Hadoop?](https://www.quora.com/How-is-Apache-Minio-different-than-Apache-Hadoop)
+        + [Hadoop vs Minio - stackshare](https://stackshare.io/stackups/hadoop-vs-minio)
+    - [Upload Files Using Pre-signed URLs](https://min.io/docs/minio/linux/integrations/presigned-put-upload-via-browser.html)
+    - [Posting a File with Curl](https://reqbin.com/req/c-dot4w5a2/curl-post-file)
++ [Ceph](https://docs.ceph.com/en/quincy/)
+
+#### Model Layer
+
++ NumPy
++ PyTorch
++ OpenCV
++ OpenVINO
++ Scikit-Learn
++ Tensorflow
+
+#### Application
+
++ [Grafana](https://grafana.com/)
++ [Http File Server](https://github.com/eastmoon/infra-hfs)
+
+#### DevOps
+
++ [Gitlab](https://github.com/eastmoon/infra-gitlab)
++ [Flink](https://zh.wikipedia.org/zh-tw/Apache_Flink)
++ [Airflow](https://github.com/eastmoon/infra-airflow)
++ [Jenkins](https://github.com/eastmoon/infra-jenkins)
+
+#### Database
+
++ OLTP
+	- [PostgreSQL](https://zh.wikipedia.org/zh-tw/PostgreSQL)
++ OLAP
+  - [Greenplum](https://greenplum.org/)
+	- [Cassandra](https://zh.wikipedia.org/zh-tw/Cassandra)
++ Converged database
+	- [MySQL](https://www.mysql.com/)
+	- [Oracle](https://zh.wikipedia.org/wiki/%E7%94%B2%E9%AA%A8%E6%96%87%E5%85%AC%E5%8F%B8)
+	- [MariaDB](https://zh.wikipedia.org/zh-tw/MariaDB)
++ Cache ( Semi-structured data )
+	- [MongoDB](https://zh.wikipedia.org/zh-tw/MongoDB)
+	- [Elasticsearch](https://github.com/eastmoon/infra-elk)
 
 ## 文獻
 
@@ -104,3 +159,16 @@
 
 + Machine learning
     - [Top 15 Machine Learning Frameworks for Machine Learning Experts](https://intellipaat.com/blog/machine-learning-frameworks/)
+
++ ETL
+    - [Day29 NiFi 與其他工具的比較](https://ithelp.ithome.com.tw/articles/10281489)
+
++ Object Storage
+    - [4 Open Source Object Storage Platforms for 2023](https://betterprogramming.pub/4-open-source-object-storage-platforms-for-2021-ceeaceb7e273)
+    - [架構師都知道的分布式對象存儲解決方案](https://kknews.cc/zh-tw/code/vrlljky.html)
+
++ Database
+    - [什麼是 OLTP？什麼是 OLAP？](https://datadrivenai.wordpress.com/2019/11/01/%E4%BB%80%E9%BA%BC%E6%98%AF-oltp%EF%BC%9F%E4%BB%80%E9%BA%BC%E6%98%AF-olap%EF%BC%9F/)
+    - [OLTP vs OLAP: Comparison between OLAP and OLTP](https://mindmajix.com/oltp-vs-olap)
+    - [Top 10 Databases to Use in 2021](https://towardsdatascience.com/top-10-databases-to-use-in-2021-d7e6a85402ba)
+    - [Greenplum 和 PostgreSQL 的關係為何？](https://www.omniwaresoft.com.tw/product-news/greenplum-news/differences-between-greenplum-and-postgresql/)
