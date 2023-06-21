@@ -23,7 +23,9 @@
     - 應用管線概念設計有序執行的工作流 ( Workflow )
     - 運用於大量數據來源、大數據量資料彙整、運算、呈現
 
-## 介紹 ( Introduction )
+## 架構設計
+
+商業智慧服務架構設計，是基於[數據處理](./doc/data-processing.md)概念與框架定義，經整合並考量使用需求來規劃。
 
 ### 數據處理
 
@@ -45,6 +47,8 @@
 + 數據類型包括文數字、半結構數據集 ( JSON )、影像、聲音等
 
 考量多樣數據類型且可以串流、批次匯入，若僅以單一軟體處理則會使軟體規模膨脹，因此應考慮分散給適當的軟體並採用分散式處理機制讓適當的軟體處理對應的數據。
+
+### 工作流框架
 
 ### 架構設計
 
@@ -91,20 +95,28 @@
 
 #### Source Layer
 
-+ [Kettle](https://github.com/pentaho/pentaho-kettle)
-+ [Kafka](https://zh.wikipedia.org/zh-tw/Kafka)
-    - [Nifi](https://nifi.apache.org/)
-    - [StreamSet](https://docs.streamsets.com/portal/platform-transformer/latest/transformer/GettingStarted/GettingStarted-Title.html#concept_a1b_zf4_pgb)
-        + [Announcing StreamSets Data Collector 3.11.0 and StreamSets Data Collector Edge 3.11.0](https://streamsets.com/blog/announcing-streamsets-data-collector-3-11-0-and-streamsets-data-collector-edge-3-11-0/)
-+ [HOP](https://hop.apache.org/)
-+ [MinIO](https://min.io/)
-    - [Apache Ozone](https://ozone.apache.org/)
-        + [Breaking the HDFS Speed Barrier - a First for Object Storage](https://blog.min.io/hdfsbenchmark/)
-        + [How is Apache Minio different than Apache Hadoop?](https://www.quora.com/How-is-Apache-Minio-different-than-Apache-Hadoop)
-        + [Hadoop vs Minio - stackshare](https://stackshare.io/stackups/hadoop-vs-minio)
-    - [Upload Files Using Pre-signed URLs](https://min.io/docs/minio/linux/integrations/presigned-put-upload-via-browser.html)
-    - [Posting a File with Curl](https://reqbin.com/req/c-dot4w5a2/curl-post-file)
-+ [Ceph](https://docs.ceph.com/en/quincy/)
++ Stream
+    - [Kafka](https://zh.wikipedia.org/zh-tw/Kafka)
+        + [Nifi](https://nifi.apache.org/)
+        + [StreamSet](https://docs.streamsets.com/portal/platform-transformer/latest/transformer/GettingStarted/GettingStarted-Title.html#concept_a1b_zf4_pgb)
+            - [Announcing StreamSets Data Collector 3.11.0 and StreamSets Data Collector Edge 3.11.0](https://streamsets.com/blog/announcing-streamsets-data-collector-3-11-0-and-streamsets-data-collector-edge-3-11-0/)
+        + [Flume](https://flume.apache.org/)
++ Object Storage
+    - [MinIO](https://min.io/)
+        - [Apache Ozone](https://ozone.apache.org/)
+            + [Breaking the HDFS Speed Barrier - a First for Object Storage](https://blog.min.io/hdfsbenchmark/)
+            + [How is Apache Minio different than Apache Hadoop?](https://www.quora.com/How-is-Apache-Minio-different-than-Apache-Hadoop)
+            + [Hadoop vs Minio - stackshare](https://stackshare.io/stackups/hadoop-vs-minio)
+        - [Upload Files Using Pre-signed URLs](https://min.io/docs/minio/linux/integrations/presigned-put-upload-via-browser.html)
+        - [Posting a File with Curl](https://reqbin.com/req/c-dot4w5a2/curl-post-file)
+    - [Ceph](https://docs.ceph.com/en/quincy/)
+    - [OpenIO](https://docs.openio.io/latest/source/sandbox-guide/quickstart.html)
++ 網頁匯入資料，整合 HFS 呈現內容
++ 網頁匯入 SSL 註冊，Rsync、SCP 匯入資料，整合 HFS 呈現內容
+    - 以網頁上傳 SSH KEY，並取得匯入的用戶名稱
+    - 匯入用戶名稱僅能存在一定時間
+    - 匯入用戶僅能對特定目錄上傳內容
+    - 上傳內容最終匯入到指定目錄
 
 #### Model Layer
 
@@ -120,12 +132,25 @@
 + [Grafana](https://grafana.com/)
 + [Http File Server](https://github.com/eastmoon/infra-hfs)
 
-#### DevOps
+#### Framework
 
 + [Gitlab](https://github.com/eastmoon/infra-gitlab)
-+ [Flink](https://zh.wikipedia.org/zh-tw/Apache_Flink)
-+ [Airflow](https://github.com/eastmoon/infra-airflow)
 + [Jenkins](https://github.com/eastmoon/infra-jenkins)
+    - [How to Configure Jenkins Master Slave Setup.](https://digitalvarys.com/how-to-configure-jenkins-master-slave-setup/)
++ [HOP](https://hop.apache.org/)
+    - [Kettle](https://github.com/pentaho/pentaho-kettle)
+    - [7 key points to successfully upgrade from Pentaho to Apache Hop](https://www.know-bi.be/blog/upgrade-to-apache-hop)
++ [Airflow](https://github.com/eastmoon/infra-airflow)
+    - [Apache Airflow Architecture](https://towardsdatascience.com/496b9cb28288)
++ [Flink](https://zh.wikipedia.org/zh-tw/Apache_Flink)
+    - [Flink Architecture](https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/concepts/flink-architecture/)
+    - [Building real-time dashboard applications with Apache Flink, Elasticsearch, and Kibana](https://www.elastic.co/blog/building-real-time-dashboard-applications-with-apache-flink-elasticsearch-and-kibana)
+    - [Data Pipelines & ETL](https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/learn-flink/etl/)
++ [Spark](https://zh.wikipedia.org/zh-tw/Apache_Spark)
+    - [Apache Spark Architecture](https://intellipaat.com/blog/tutorial/spark-tutorial/spark-architecture)
++ [Hadoop](https://zh.wikipedia.org/zh-tw/Apache_Hadoop)
+    - [Hadoop Architecture](https://hackr.io/blog/hadoop-architecture)
+    - [Setting Up ETL in Hadoop: 5 Easy Steps](https://hevodata.com/learn/etl-in-hadoop/)
 
 #### Database
 
@@ -141,10 +166,18 @@
 + Cache ( Semi-structured data )
 	- [MongoDB](https://zh.wikipedia.org/zh-tw/MongoDB)
 	- [Elasticsearch](https://github.com/eastmoon/infra-elk)
++ [Productionizing Machine Learning with Delta Lake](https://www.databricks.com/blog/2019/08/14/productionizing-machine-learning-with-delta-lake.html)
 
 ## 文獻
 
++ [The Big Data Framework](https://www.bigdataframework.org/an-overview-of-the-big-data-framework/)
+    - [10 Best Big Data Tools for 2023](https://jelvix.com/blog/top-5-big-data-frameworks)
+        + [Hadoop vs. Spark: How to Choose Between the Two?](https://jelvix.com/blog/hadoop-vs-spark-what-to-choose-to-process-big-data)
+    - [Top 5 Essential Big Data Frameworks for Modern Data Analytics](https://pub.towardsai.net/top-5-essential-big-data-frameworks-for-modern-data-analytics-b8ee93e9fa00)
++ [Comparing Tools For Data Processing Pipelines](https://neptune.ai/blog/comparing-tools-for-data-processing-pipelines)
+    - [What Are the Best Data Pipeline Tools? A Deep Dive Into Selecting the Most Efficient Solution](https://www.arcion.io/learn/data-pipeline-tools)
 + [雲端運算 IaaS、PaaS、SaaS 與 FaaS](https://cynthiachuang.github.io/Difference-between-IaaS-PaaS-SaaS-and-FaaS/)
+
 + Image processing
     - [Image processing wiki](https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86)
     - [IPOL Journal · Image Processing On Line](http://www.ipol.im/)
@@ -161,7 +194,7 @@
     - [Top 15 Machine Learning Frameworks for Machine Learning Experts](https://intellipaat.com/blog/machine-learning-frameworks/)
 
 + ETL
-    - [Day29 NiFi 與其他工具的比較](https://ithelp.ithome.com.tw/articles/10281489)
+    - [TOP 5 ENTERPRISE ETL TOOLS. HOW TO CHOOSE THE BEST?](https://freshcodeit.com/freshcode-post/top-5-enterprise-etl-tools)
 
 + Object Storage
     - [4 Open Source Object Storage Platforms for 2023](https://betterprogramming.pub/4-open-source-object-storage-platforms-for-2021-ceeaceb7e273)
@@ -172,3 +205,30 @@
     - [OLTP vs OLAP: Comparison between OLAP and OLTP](https://mindmajix.com/oltp-vs-olap)
     - [Top 10 Databases to Use in 2021](https://towardsdatascience.com/top-10-databases-to-use-in-2021-d7e6a85402ba)
     - [Greenplum 和 PostgreSQL 的關係為何？](https://www.omniwaresoft.com.tw/product-news/greenplum-news/differences-between-greenplum-and-postgresql/)
+
++ Software Compare
+    - Source
+        + [Ceph VS MinIO](https://www.saashub.com/compare-minio-vs-ceph)
+            - [分布式存储系统对比之 Ceph VS MinIO](https://www.talkwithtrend.com/Article/253471)
+            - [什么是Ceph？MinIO和ceph的区别什么是块存储、文件存储和对象存储以及区别？](https://blog.51cto.com/liangchaoxi/4993750)
+        + [Apache Kafka vs RabbitMQ](https://www.simplilearn.com/kafka-vs-rabbitmq-article)
+            - [Kafka vs. RabbitMQ: Architecture, Performance & Use Cases](https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-case)
+            - [Kafka vs. RabbitMQ 差異比較](https://www.readfog.com/a/1641191399083839488)
+        + [Apache Kafka and MQTT](https://www.hivemq.com/blog/mqtt-vs-kafka-real-time-bidirectional-data-processing/)
+            - [Apache Kafka and MQTT (1/5) - Overview and Comparison](https://www.kai-waehner.de/blog/2021/03/15/apache-kafka-mqtt-sparkplug-iot-blog-series-part-1-of-5-overview-comparison/)
+    - DevOps
+        + [Apache Airflow vs. Apache NiFi](https://ithelp.ithome.com.tw/articles/10281489)
+        + [Apache Airflow vs Jenkins](https://hevodata.com/learn/airflow-vs-jenkins/)
+            - [Jenkins VS Apache Airflow - Saashub](https://www.saashub.com/compare-jenkins-vs-airflow)
+        + [Apache Airflow vs Apache Hop](https://www.projectpro.io/compare/apache-airflow-vs-apache-hop)
+        + [Apache Airflow VS Apache Flink](https://www.saashub.com/compare-airflow-vs-apache-flink)
+        + [Apache NiFi vs Apache Hop](https://www.projectpro.io/compare/apache-nifi-vs-apache-hop)
+        + Compare Chart
+            - [Apache Airflow vs. Apache Spark vs. Apache Flink vs. Hadoop Comparison Chart - sourceforge](https://sourceforge.net/software/compare/Apache-Airflow-vs-Apache-Spark-vs-Flink-vs-Hadoop/)
+            - [Compare Apache Airflow vs. Apache Flink vs. StreamSets](https://slashdot.org/software/comparison/Apache-Airflow-vs-Flink-vs-StreamSets/)
+        + [Apache Spark vs Apache Flink](https://cloudinfrastructureservices.co.uk/apache-spark-vs-flink-whats-the-difference/)
+            - [Apache Flink vs Apache Spark Streaming](https://www.projectpro.io/compare/apache-flink-vs-apache-spark-streaming)
+        + [Hadoop vs Spark vs Flink – Big Data Frameworks Comparison](https://data-flair.training/blogs/hadoop-vs-spark-vs-flink/)
+            - [Big Data Frameworks – Hadoop vs Spark vs Flink](https://www.geeksforgeeks.org/big-data-frameworks-hadoop-vs-spark-vs-flink/)
+            - [Hadoop、Spark、Flink三大框架对比](https://zhuanlan.zhihu.com/p/108006531)
+            - [Hadoop vs Spark vs Flink——大数据框架比较](https://zhuanlan.zhihu.com/p/549760480)
