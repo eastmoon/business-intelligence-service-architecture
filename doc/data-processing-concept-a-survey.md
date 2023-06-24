@@ -1,4 +1,4 @@
-# 數據處理工具調研 ( Data Processing tool a survey )
+# 數據處理觀念調研 ( Data Processing tool a survey )
 
 ## 數據管道 ( Data Pipeline )
 
@@ -227,6 +227,14 @@ While we already answered this question in the proper way before. Those who are 
 However, we stress it again; the best framework is the one appropriate for the task at hand.
 
 ## 文獻
+
++ [The Big Data Framework](https://www.bigdataframework.org/an-overview-of-the-big-data-framework/)
+    - [10 Best Big Data Tools for 2023](https://jelvix.com/blog/top-5-big-data-frameworks)
+        + [Hadoop vs. Spark: How to Choose Between the Two?](https://jelvix.com/blog/hadoop-vs-spark-what-to-choose-to-process-big-data)
+    - [Top 5 Essential Big Data Frameworks for Modern Data Analytics](https://pub.towardsai.net/top-5-essential-big-data-frameworks-for-modern-data-analytics-b8ee93e9fa00)
++ [Comparing Tools For Data Processing Pipelines](https://neptune.ai/blog/comparing-tools-for-data-processing-pipelines)
+    - [What Are the Best Data Pipeline Tools? A Deep Dive Into Selecting the Most Efficient Solution](https://www.arcion.io/learn/data-pipeline-tools)
++ [雲端運算 IaaS、PaaS、SaaS 與 FaaS](https://cynthiachuang.github.io/Difference-between-IaaS-PaaS-SaaS-and-FaaS/)
 
 + Framework Concepts
     + [How is ETL different from BigData?](https://www.quora.com/How-is-ETL-different-from-BigData)
