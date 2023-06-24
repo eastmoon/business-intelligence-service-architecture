@@ -1,4 +1,4 @@
-# 數據處理 ( Data Processing )
+# 數據處理工具調研 ( Data Processing tool a survey )
 
 ## 數據管道 ( Data Pipeline )
 
@@ -19,6 +19,105 @@ Let’s understand how the other aspects of a data pipeline help the organizatio
 + Data quality: A data pipeline can help improve the quality of data by automating the process of cleaning and transforming the data. This ensures that the data is accurate, consistent, and reliable.
 + Cost-effectiveness: A data pipeline can help reduce the cost of managing and analyzing data by automating repetitive tasks and optimizing resource utilization.
 + Real-time insights: A data pipeline can process and analyze data in real-time, allowing organizations to gain insights and make informed decisions quickly.
+
+---
+
+#### What is a data pipeline?
+
+Data pipelines come in various shapes and forms but all of them have the same goal: to move data from one location and move it to another. Let’s take a deeper look at the definition of a data pipeline.
+
+A data pipeline is a series of actions and processes used to transfer raw data from one point to another.
+
+The term “data pipeline” is now ubiquitous in the world of big data. Data pipelines consist of three key elements: a source, a processing step or steps, and a destination. Looking at each component individually can help one to see exactly how it all comes together. Let’s take a look at all three of the components below:
+
+Source: Data source is the place from which data will be extracted. It can be an application database, IoT system, data coming through APIs, data lake or data warehouse, social media data, and public datasets. The data can be structured, unstructured, or semi-structured.
+Processing: Data processing involves applying transformations to source data to make it ready for analysis. It can be done before or after the data is loaded to the destination.
+Destination: Destination refers to the final storage location where data will be stored. This could be a big data platform, another application database, or another storage or analytics solution. From there, data can be accessed by other systems for analysis.
+
+#### Data Pipelines vs Data Warehouses
+
++ A data warehouse is a centralized collection of data from multiple sources.
++ A data warehouse provides integrated, time-variant, organized, and non-volatile data.
++ A data warehouse is a one-stop-shop for data. It helps organizations generate insights from data and make efficient decisions.
+
+In contrast, a data pipeline is a process that extracts data from one system, transforms it, and moves it to another system. A data pipeline can connect data warehouses to other systems and facilitate the movement of data into or out of a data warehouse. A data pipeline is the main mechanism used to move data from a primary location, where the data was collected or stored, to the secondary location where the data will be combined with other data feeds.
+
+Unlike a data warehouse, a data pipeline doesn’t store data. The data pipeline supplied a conduit for data to flow throw without actually storing it.
+
+#### Data Pipelines vs ETL process
+
+Another possible point of confusion is the similarities between a data pipeline and an ETL process. In an ETL process, data is extracted from a source, transformed, and loaded to a destination. ETL is a subset of the data pipeline, which is a broader concept. An ETL process is not necessarily a data pipeline, however, some data pipelines can support streaming ETL process capabilities. Let’s discuss the differences between ETL and a data pipeline.
+
+In the ETL process, a data transformation step is necessary, while in the data pipeline, a transformation step can be skipped depending upon the use case.
+
+---
+
+#### What Is a Data Pipeline?
+
+A data pipeline is a series of data processing steps. If the data is not currently loaded into the data platform, then it is ingested at the beginning of the pipeline. Then there are a series of steps in which each step delivers an output that is the input to the next step. This continues until the pipeline is complete. In some cases, independent steps may be run in parallel.
+
+Data pipelines consist of three key elements: a source, a processing step or steps, and a destination. In some data pipelines, the destination may be called a sink. Data pipelines enable the flow of data from an application to a data warehouse, from a data lake to an analytics database. for example. Data pipelines also may have the same source and sink, such that the pipeline is purely about modifying the data set. Any time data is processed between point A and point B (or points B, C, and D), there is a data pipeline between those points.
+
+Common steps in data pipelines include data transformation, augmentation, enrichment, filtering, grouping, aggregating, and the running of algorithms against that data.
+
+#### What Is a Big Data Pipeline?
+
+As the volume, variety, and velocity of data have dramatically grown in recent years, architects and developers have had to adapt to “big data.” The term “big data” implies that there is a huge volume to deal with. This volume of data can open opportunities for use cases such as predictive analytics, real-time reporting, and alerting, among many examples.
+
+Like many components of data architecture, data pipelines have evolved to support big data. Big data pipelines are data pipelines built to accommodate one or more of the three traits of big data. The velocity of big data makes it appealing to build streaming data pipelines for big data. Then data can be captured and processed in real time so some action can then occur. The volume of big data requires that data pipelines must be scalable, as the volume can be variable over time. In practice, there are likely to be many big data events that occur simultaneously or very close together, so the big data pipeline must be able to scale to process significant volumes of data concurrently. The variety of big data requires that big data pipelines be able to recognize and process data in many different formats—structured, unstructured, and semi-structured.
+
+### 主流框架
+
+#### Airflow
+
+It is one of the most popular open-source python-based data pipeline tools with high flexibility in creating workflows and tasks. It comes with an intuitive web application that allows the user to monitor, schedule, and manage complex workflows with ease. The logical flow of running upstream and downstream tasks is decided using an algorithm commonly known as a Directed Acyclic Graph (DAG).
+
++ Categorization
+  - Open Source
+  - Batch data processing
++ Pros
+  - Fully customizable and supports complex business use cases.
+  - Strong community and tech support.
++ Cons
+  - It’s not a plug-and-play system and requires a complex setup.
+  - Requires developers to possess a working knowledge of Python programming language.
+  - The onus of development, productionizing and monitoring is all on the user aka the developer.
+
+#### Airbyte
+
+Airbyte provides a SaaS-based data integration platform that supports data extraction from a multitude of sources and storage to varied destinations. It supports tools like Airflow, Prefect, etc. for data orchestration.
+
++ Categorization
+  - Open Source
+  - Cloud-based hosting
+  - Stream data processing
++ Pros
+  - Develop custom connects with CDK (Connector Development Kit).
+  - Enables users to trigger their custom transformations via SQL and dbt.
+  - Ensures data protection and leaks by ensuring best practices for data storage.
++ Cons
+  - Limited connectors.
+  - No user management UI for user authentication.
+  - Limited expert support.3
+
+---
+
+Airbyte is a SaaS-based open-source data integration platform. Airbyte allows users to extract data from more than 120 sources, and data can be stored and replicated to a number of destinations. In Airbyte, orchestration can be done using in-built functions or through orchestration tools like Airflow, Prefect, etc.
+
++ Pros
+  - Airbyte provides a Connector Development Kit that can be used to create custom connectors.
+  - Airbyte provides custom transformation features via SQL and dbt. Users can trigger their own dbt packages at the destination level immediately after EL.
+  - Airbyte doesn’t store data in any temporary location during extraction. This prevents data leaks and ensures data protection.
+
++ Cons
+  - In comparison with other tools, Airbyte offers a smaller number of connectors to extract and load data
+  - The user management system is a key component that allows users to maintain the logs of users working with the product. Airbyte has no user management system available yet.
+  - Airbyte has limited options to facilitate user queries. Discourse is the only active support channel at the moment.
+
+#### Apache Kafka
+
++ [Streaming Data Pipelines](https://developer.confluent.io/learn-kafka/data-pipelines/intro/)
++ [How to Build a Streaming Kafka Data Pipeline: 7 Easy Steps](https://hevodata.com/learn/kafka-data-pipeline/)
 
 ## 大數據框架 ( Big Data Framework )
 
@@ -132,6 +231,8 @@ However, we stress it again; the best framework is the one appropriate for the t
 + Framework Concepts
     + [How is ETL different from BigData?](https://www.quora.com/How-is-ETL-different-from-BigData)
         - [What Is a Data Pipeline?](https://hazelcast.com/glossary/data-pipeline/)
+        - [What Is Lambda Architecture?](https://hazelcast.com/glossary/lambda-architecture/)
+        - [What Is the Kappa Architecture?](https://hazelcast.com/glossary/kappa-architecture/)
     + [The Big Data Framework](https://www.bigdataframework.org/an-overview-of-the-big-data-framework/)
         - [10 Best Big Data Tools for 2023](https://jelvix.com/blog/top-5-big-data-frameworks)
             + [Hadoop vs. Spark: How to Choose Between the Two?](https://jelvix.com/blog/hadoop-vs-spark-what-to-choose-to-process-big-data)
