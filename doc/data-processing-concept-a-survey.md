@@ -226,6 +226,40 @@ While we already answered this question in the proper way before. Those who are 
 
 However, we stress it again; the best framework is the one appropriate for the task at hand.
 
+## 數據倉儲 ( Data Storage )
+
+### Data Lake architecture
+
+#### What is a Data Lake?
+
+A data lake is a repository that stores all of your organization's data — both structured and unstructured.
+
+#### Data Lake Benefits
+
+Because the large volumes of data in a data lake are not structured before being stored, skilled data scientists or end-to-end self-service-bi tools can gain access to a broader range of data far faster than in a data warehouse.
+
++ Massive volumes of structured and unstructured data like ERP transactions and call logs can be stored cost effectively.
++ Data is available for use far faster by keeping it in a raw state.
++ A broader range of data can be analyzed in new ways to gain unexpected and previously unavailable insights.
+
+#### What is a Data Warehouse?
+
+Similar to a data lake, a data warehouse is a repository for business data.
+
+However, unlike a data lake, only highly structured and unified data lives in a data warehouse to support specific business intelligence and analytics needs.
+
+#### Data Warehouse Benefits
+
+A data warehouse offers enormous benefits to organizations, especially as it relates to BI and analytics. After the initial work of cleansing and processing, data stored in a warehouse serves as a consistent "single source of truth" which is invaluable to business data analysis, collaboration, and better insights. Three major advantages of a data warehouse include:
+
++ Little or no data prep needed, making it far easier for analysts and business users to access and analyze this data.
++ Accurate, complete data is available more quickly, so businesses can turn information into insight faster.
++ Unified, harmonized data offers a single source of truth, building trust in data insights and decision-making across business lines.
+
+#### What is a Data Lake Architecture?
+
+Think of it as a massive storage pool for data in its natural, raw state (like a lake). A data lake architecture can handle the huge volumes of data that most organizations produce without the need to structure it first. Data stored in a data lake can be used to build data pipelines to make it available for data analytics tools to find insights that inform key business decisions.
+
 ## 文獻
 
 + [The Big Data Framework](https://www.bigdataframework.org/an-overview-of-the-big-data-framework/)
@@ -234,6 +268,7 @@ However, we stress it again; the best framework is the one appropriate for the t
     - [Top 5 Essential Big Data Frameworks for Modern Data Analytics](https://pub.towardsai.net/top-5-essential-big-data-frameworks-for-modern-data-analytics-b8ee93e9fa00)
 + [Comparing Tools For Data Processing Pipelines](https://neptune.ai/blog/comparing-tools-for-data-processing-pipelines)
     - [What Are the Best Data Pipeline Tools? A Deep Dive Into Selecting the Most Efficient Solution](https://www.arcion.io/learn/data-pipeline-tools)
++ [Data Lake vs Data Warehouse](https://www.qlik.com/us/data-lake/data-lake-vs-data-warehouse)
 + [雲端運算 IaaS、PaaS、SaaS 與 FaaS](https://cynthiachuang.github.io/Difference-between-IaaS-PaaS-SaaS-and-FaaS/)
 
 + Framework Concepts
@@ -241,6 +276,7 @@ However, we stress it again; the best framework is the one appropriate for the t
         - [What Is a Data Pipeline?](https://hazelcast.com/glossary/data-pipeline/)
         - [What Is Lambda Architecture?](https://hazelcast.com/glossary/lambda-architecture/)
         - [What Is the Kappa Architecture?](https://hazelcast.com/glossary/kappa-architecture/)
+        - [ETL vs ELT:5 Critical Differences](https://www.integrate.io/blog/etl-vs-elt/)
     + [The Big Data Framework](https://www.bigdataframework.org/an-overview-of-the-big-data-framework/)
         - [10 Best Big Data Tools for 2023](https://jelvix.com/blog/top-5-big-data-frameworks)
             + [Hadoop vs. Spark: How to Choose Between the Two?](https://jelvix.com/blog/hadoop-vs-spark-what-to-choose-to-process-big-data)
