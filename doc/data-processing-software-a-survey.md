@@ -48,16 +48,12 @@
     - [Kettle](https://github.com/pentaho/pentaho-kettle)
     - [7 key points to successfully upgrade from Pentaho to Apache Hop](https://www.know-bi.be/blog/upgrade-to-apache-hop)
 + [Airflow](https://github.com/eastmoon/infra-airflow)
-    - [Apache Airflow Architecture](https://towardsdatascience.com/496b9cb28288)
-+ [Flink](https://zh.wikipedia.org/zh-tw/Apache_Flink)
-    - [Flink Architecture](https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/concepts/flink-architecture/)
-    - [Building real-time dashboard applications with Apache Flink, Elasticsearch, and Kibana](https://www.elastic.co/blog/building-real-time-dashboard-applications-with-apache-flink-elasticsearch-and-kibana)
-    - [Data Pipelines & ETL](https://nightlies.apache.org/flink/flink-docs-release-1.16/docs/learn-flink/etl/)
-+ [Spark](https://zh.wikipedia.org/zh-tw/Apache_Spark)
-    - [Apache Spark Architecture](https://intellipaat.com/blog/tutorial/spark-tutorial/spark-architecture)
++ [Flink](https://github.com/eastmoon/infra-flink)
++ [Spark](https://github.com/eastmoon/infra-spark)
 + [Hadoop](https://zh.wikipedia.org/zh-tw/Apache_Hadoop)
     - [Hadoop Architecture](https://hackr.io/blog/hadoop-architecture)
     - [Setting Up ETL in Hadoop: 5 Easy Steps](https://hevodata.com/learn/etl-in-hadoop/)
+    - [Tutorial 2: Introduction to Hadoop Architecture, and Components](https://www.softwaretestingclass.com/introduction-to-hadoop-architecture-and-components/)
 
 #### Database
 

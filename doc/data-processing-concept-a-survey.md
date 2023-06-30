@@ -297,6 +297,7 @@ Think of it as a massive storage pool for data in its natural, raw state (like a
             - [Apache Kafka and MQTT (1/5) - Overview and Comparison](https://www.kai-waehner.de/blog/2021/03/15/apache-kafka-mqtt-sparkplug-iot-blog-series-part-1-of-5-overview-comparison/)
     - Framework
         + [Apache Airflow vs. Apache NiFi](https://ithelp.ithome.com.tw/articles/10281489)
+        + [Apache Airflow vs. Apache Beam](https://www.astronomer.io/blog/airflow-vs-apache-beam/)
         + [Apache Airflow vs Jenkins](https://hevodata.com/learn/airflow-vs-jenkins/)
             - [Jenkins VS Apache Airflow - Saashub](https://www.saashub.com/compare-jenkins-vs-airflow)
         + [Apache Airflow vs Apache Hop](https://www.projectpro.io/compare/apache-airflow-vs-apache-hop)
